@@ -1,4 +1,4 @@
-<ul><li style="list-style-*Type: none;">
+<ul><li style="list-style-Type: none;">
 File Name - ChatStorage.sqlite
 
   *Table - ZWABLACKLISTITEM
