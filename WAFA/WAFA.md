@@ -1,0 +1,10 @@
+# WhatsApp Forensic Analysis on MacOS
+
+WhatsApp (the application downloaded from the App Store) stores majority of the data (messages, media and even statuses) that it uses in the application locally. <br>
+I first encountered this 'goldmine' of data when I accidentally clicked on path location of a PDF document which I had opened directly from WhatsApp rather than downloading it.<br><br>
+This data is all stored in '/Users/\[your username\]/Library/GroupContainers/group.net.whatsapp.WhatsApp.shared'. There are several subdirectories in this, of which only certain few are relevant to the data you wish to extract.<br>
+There are also directories that are essentially having the same path, just having the last directory name changed, namely: group.net.whatsapp.family, group.net.whatsapp.WhatsApp.private and group.net.whatsapp.WhatsAppSMB.shared. <br>
+These don't really contain anything that important (on first glance, back when I initially discovered this directory, hence I haven't looked into these directories much).<br>
+For me, these didn't have any data in them (at the time of me writing this part of the article), so I also can't really explore and find out. If anybody has any insight into this, kindly do let me know.<br><br>
+The folder of most importance and relevance (to me) is the first folder mentioned. It has some .sqlite files, some .sqlite-shm files, some .sqlite-wal files, a couple .lock files, a handful .dat files and a .blacklistfile and a .whitelist files (I might have missed a couple files, but I don't think they contain any information of much importance anyways). It also has some subdirectories, of which the most useful ones (to me) are Message and Media.<br>
+From what I have seen, most .sqlite files (with the exception emoji and sticker) have a corresponding .sqlite-shm and .sqlite-wal with the same file name. I suspect that these are there to keep backups of the data in the .sqlite files, but I have no guarantee of this. If anybody has an idea as to what these files are about, please do let me know.<br>
